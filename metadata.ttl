@@ -16,53 +16,48 @@
 :dataset
     a rb:Dataset, dcat:Dataset ;
     dcterms:conformsTo <https://w3id.org/riverbench/schema/metadata> ;
-    dcterms:identifier "[YOUR DATASET ID (only a-z, 0-9, -)]" ;
+    dcterms:identifier "digital-agenda-indicators" ;
 
-    dcterms:title "[HUMAN-READABLE NAME OF YOUR DATASET]"@en ;
-    dcterms:description "[ELABORATED DESCRIPTION OF THE DATASET]"@en ;
-    dcterms:issued "[DATE OF INITIAL SUBMISSION, YYYY-MM-DD]"^^xsd:date ;
+    dcterms:title "EU Digital Agenda Key Indicators"@en ;
+    dcterms:description """The dataset of [EU Digital Agenda Key Indicators](https://digital-agenda-data.eu/datasets/digital_agenda_scoreboard_key_indicators) contains statistical information about the European information society. The dataset is composed of a series of statistical observations with various properties and a very regular structure.
+
+This is a large, typical dataset with statistical information, with a very regular structure. In contrast to [linked-spending](https://w3id.org/riverbench/datasets/linked-spending/dev), this dataset does not include textual information and is more homogenous, making it an interesting comparison point for aggressive compression algorithms."""@en ;
+    dcterms:issued "2023-05-04"^^xsd:date ;
 
     # License and attribution
-    # SPDX license list: https://spdx.org/licenses/
-    # Do not include ".html" at the end of the SPDX license URL
-    # Example of a valid URL: https://spdx.org/licenses/CC-BY-4.0
-    dcterms:license <SPDX-LICENSE-URL> ;
-    # Feel free to add more creators or use any FOAF properties here
+    dcterms:license <https://spdx.org/licenses/CC-BY-4.0> ;
+    dcterms:rights "According to the European Commission reuse notice, reuse is authorised, provided the source is acknowledged. The reuse policy of the European Commission is implemented by the Decision of 12 December 2011."@en ;
     dcterms:creator [
-        foaf:name "[YOUR NAME]" ;
-        foaf:nick "[YOUR NICK]" ;
-        foaf:homepage <LINK-TO-YOUR-PAGE> ;
-        # Optional: use this property to order creators in the generated docs
+        foaf:name "European Commission, Directorate-General for Communications Networks, Content and Technology" ;
+        foaf:homepage <https://commission.europa.eu/index_en> ;
         rbdoc:hasDocWeight 1 ;
+    ] , [
+        foaf:name "Piotr Sowiński" ;
+        foaf:nick "Ostrzyciel" ;
+        rdfs:comment "Processing the dataset" ;
+        foaf:homepage <https://github.com/Ostrzyciel>, <https://orcid.org/0000-0002-2543-9461> ;
+        rbdoc:hasDocWeight 2 ;
     ] ;
     
     # Themes
-    # Full list of themes: https://w3id.org/riverbench/schema/theme.ttl
-    dcat:theme <ADD-AT-LEAST-ONE-THEME> ;
+    dcat:theme rbt:temporal, rbt:statistical, rbt:government ;
 
     # Technical metadata
-    # URIs of the ontologies used in the dataset
-    rb:usesOntology <ADD-ONTOLOGY-URIS> ;
-    # Set to number of stream elements in the dataset
-    rb:hasStreamElementCount -1 ;
+    rb:usesOntology
+        <http://purl.org/linked-data/cube#> ,
+        <http://purl.org/linked-data/sdmx/2009/measure#> ,
+        <http://semantic.digital-agenda-data.eu/def/property/>
+    ;
+    rb:hasStreamElementCount 1440415 ;
     # One of: rb:triples, rb:quads, rb:graphs
-    rb:hasStreamElementType <STREAM-ELEMENT-TYPE> ;
+    rb:hasStreamElementType rb:triples ;
     rb:hasStreamElementSplit [
-        # At least one of: rb:StatementCountStreamElementSplit,
-        #   rb:TimeStreamElementSplit, rb:TopicStreamElementSplit
-        a <SPLIT-TYPE> ;
-        # If your dataset is split by time, specify the temporal property:
-        # rb:hasTemporalProperty <PROPERTY-IRI> ;
-        rdfs:comment "[FURTHER EXPLANATION ON THE SPLIT]"@en
+        a rb:TopicStreamElementSplit ;
+        rdfs:comment "Each stream element corresponds to one statistical observation. The elements are ordered alphabetically, so it is likely that similar observations (e.g., from the the same country) are next to each other in the stream."@en
     ] ;
-    rb:conformsToRdf11 "" ; # true or false
-    rb:conformsToRdfStarDraft_20211217 "" ; # true or false
-    rb:usesGeneralizedRdfDatasets "" ; # true or false
-    rb:usesGeneralizedTriples "" ; # true or false
-    rb:usesRdfStar "" ; # true or false
-    
-    # Add any additional metadata here
-    # Examples of useful properties:
-    # dcat:temporalResolution, dcat:spatialResolutionInMeters,
-    # dcterms:language
+    rb:conformsToRdf11 true ;
+    rb:conformsToRdfStarDraft_20211217 true ;
+    rb:usesGeneralizedRdfDatasets false ;
+    rb:usesGeneralizedTriples false ;
+    rb:usesRdfStar false ;
 .

@@ -38,6 +38,7 @@ This is a large, typical dataset with statistical information, with a very regul
         foaf:homepage <https://github.com/Ostrzyciel>, <https://orcid.org/0000-0002-2543-9461> ;
         rbdoc:hasDocWeight 2 ;
     ] ;
+    dcterms:source <http://semantic.digital-agenda-data.eu/dataset/digital-agenda-scoreboard-key-indicators> ;
     
     # Themes
     dcat:theme rbt:temporal, rbt:statistical, rbt:government ;

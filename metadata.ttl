@@ -6,7 +6,9 @@
 @prefix rbdoc: <https://w3id.org/riverbench/schema/documentation#> .
 @prefix rbt: <https://w3id.org/riverbench/schema/theme#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix stax: <https://w3id.org/stax/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # This file contains the manually written metadata for the dataset.
@@ -50,11 +52,24 @@ This is a large, typical dataset with statistical information, with a very regul
         <http://semantic.digital-agenda-data.eu/def/property/>
     ;
     rb:hasStreamElementCount 1440415 ;
-    # One of: rb:triples, rb:quads, rb:graphs
-    rb:hasStreamElementType rb:triples ;
+    stax:hasStreamTypeUsage [
+        a stax:RdfStreamTypeUsage ;
+        rdfs:comment "The dataset can be viewed as a stream of graphs corresponding to statistical observations. Each graph is uniquely identified by its subject IRI."@en ;
+        stax:hasStreamType stax:subjectGraphStream
+    ] , [
+        a stax:RdfStreamTypeUsage ;
+        rdfs:comment "The dataset can be viewed as a flattened stream of triples."@en ;
+        stax:hasStreamType stax:flatTripleStream
+    ] ;
     rb:hasStreamElementSplit [
         a rb:TopicStreamElementSplit ;
-        rdfs:comment "Each stream element corresponds to one statistical observation. The elements are ordered alphabetically, so it is likely that similar observations (e.g., from the the same country) are next to each other in the stream."@en
+        rdfs:comment "Each stream element corresponds to one statistical observation. The elements are ordered alphabetically, so it is likely that similar observations (e.g., from the the same country) are next to each other in the stream."@en ;
+        rb:hasSubjectShape [
+            sh:targetClass <http://purl.org/linked-data/cube#Observation>
+        ] , [
+            rdfs:comment "Some observations have no class assigned."@en ;
+            sh:targetSubjectsOf <http://purl.org/linked-data/sdmx/2009/measure#obsValue>
+        ] ;
     ] ;
     rb:conformsToRdf11 true ;
     rb:conformsToRdfStarDraft_20211217 true ;

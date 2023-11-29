@@ -1,10 +1,10 @@
 @prefix : <https://w3id.org/riverbench/temp#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eurovoc: <http://eurovoc.europa.eu/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rb: <https://w3id.org/riverbench/schema/metadata#> .
 @prefix rbdoc: <https://w3id.org/riverbench/schema/documentation#> .
-@prefix rbt: <https://w3id.org/riverbench/schema/theme#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
@@ -43,7 +43,13 @@ This is a large, typical dataset with statistical information, with a very regul
     dcterms:source <http://semantic.digital-agenda-data.eu/dataset/digital-agenda-scoreboard-key-indicators> ;
     
     # Themes
-    dcat:theme rbt:temporal, rbt:statistical, rbt:government ;
+    dcat:theme
+        eurovoc:4267, # official statistics
+        eurovoc:7219, # digital technology
+        eurovoc:6140, # information society
+        eurovoc:4060, # European Union
+        eurovoc:4038 # European Commission
+    ;
 
     # Technical metadata
     rb:usesOntology

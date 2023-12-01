@@ -9,6 +9,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix stax: <https://w3id.org/stax/ontology#> .
+@prefix void: <http://rdfs.org/ns/void#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # This file contains the manually written metadata for the dataset.
@@ -52,7 +53,7 @@ This is a large, typical dataset with statistical information, with a very regul
     ;
 
     # Technical metadata
-    rb:usesOntology
+    void:vocabulary
         <http://purl.org/linked-data/cube#> ,
         <http://purl.org/linked-data/sdmx/2009/measure#> ,
         <http://semantic.digital-agenda-data.eu/def/property/>

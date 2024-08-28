@@ -11,7 +11,7 @@
 [![.github/workflows/release.yaml](https://github.com/RiverBench/dataset-digital-agenda-indicators/actions/workflows/release.yaml/badge.svg?event=push)](https://github.com/RiverBench/dataset-digital-agenda-indicators/actions/workflows/release.yaml)
 
 
-# digital-agenda-indicators (development version)
+# Dataset: digital-agenda-indicators (development version)
 
 The dataset of [EU Digital Agenda Key Indicators](https://digital-agenda-data.eu/datasets/digital_agenda_scoreboard_key_indicators) contains statistical information about the European information society. The dataset is composed of a series of statistical observations with various properties and a very regular structure.
 
@@ -47,7 +47,7 @@ Full documentation for all versions can be found [on the website](https://w3id.o
 - **<abbr title="Information about rights held in and over the resource.">Rights</abbr>**: According to the European Commission reuse notice, reuse is authorised, provided the source is acknowledged. The reuse policy of the European Commission is implemented by the Decision of 12 December 2011. _(<abbr title="English">en</abbr>)_
 - **<abbr title="A related resource from which the described resource is derived.">Source</abbr>**: [http://semantic.digital-agenda-data.eu/dataset/digital-agenda-scoreboard-key-indicators](http://semantic.digital-agenda-data.eu/dataset/digital-agenda-scoreboard-key-indicators)
 - **<abbr title="Date of formal issuance of the resource.">Date Issued</abbr>**: 2023-05-04
-- **<abbr title="Date on which the resource was changed.">Date Modified</abbr>**: 2024-08-26
+- **<abbr title="Date on which the resource was changed.">Date Modified</abbr>**: 2024-08-28
 - **<abbr title="A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information.">Landing page</abbr>**: [digital-agenda-indicators (dev)](https://w3id.org/riverbench/datasets/digital-agenda-indicators/dev)
 - **<abbr title="An established standard to which the described resource conforms.">Conforms To</abbr>**: Metadata ([https://w3id.org/riverbench/schema/metadata](https://w3id.org/riverbench/schema/metadata))
 
